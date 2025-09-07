@@ -1,0 +1,113 @@
+.heading-row {
+  display: flex;
+  justify-content: center;
+    align-items:center;
+
+  max-width: 1000px; /* more realistic for multiple buttons */
+  margin: .1rem auto;
+  padding: 0 1rem;
+}
+
+  .heading-row a img {
+  max-height: 150px; /* adjust as needed */
+  height: auto;
+  width: auto;
+    object-fit: contain;
+
+}
+
+
+.heading-row h3 {
+  margin: 0;
+  font-weight: 500;
+}
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: #bb3535;
+      color: #dad7d7;
+      text-align: center;
+    }
+    .image-row, .image-container {
+      display: flex;
+      justify-content: space-between; /* spreads the images left and right */
+      max-width: 2000px;
+      max-height: 2000px;
+      margin: 0 auto; /* centers the container */
+      gap: 1rem;
+    }
+    .image-container img {
+  max-height: 2000px;
+  width: auto;
+  object-fit: cover; /* or 'contain' depending on your vibe */
+}
+    .image-container img {
+  max-width: 100%; /* Scale image within container */
+  height: auto; /* Maintain aspect ratio */
+  max-height: 500px; /* Add height restriction */
+  object-fit: contain; /* Ensure full image fits in container */
+  border-radius: 8px;
+  display: block;
+  margin: 0 auto; /* Center the image */
+}
+      .link {
+        animation: ease-out;
+    }
+
+  .binary-text {
+    font-family: monospace;
+    font-size: 14px;
+    color: #555;
+    cursor: pointer;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    padding: 5px 0;
+  }
+
+  /* Hide binary when hovered */
+  .binary-text:hover {
+    color: transparent;
+  }
+
+  /* Reveal the quote */
+  .binary-text::after {
+    content: "Hello! My name is Jackie and these are all the things I like to do :)";
+    font-family: "Helvetica Neue", sans-serif;
+    font-size: 18px;
+    color: #9a9797;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    opacity: 0;
+    transform: translate(-20px, -50%) rotate(-2deg);
+    transition: opacity 1.2s ease, transform 1.2s ease;
+  }
+
+  .binary-text:hover::after {
+    opacity: 1;
+    transform: translate(0, -50%) rotate(0deg);
+  }
+
+  /* Add a little "gust of wind" feel */
+  .binary-text:hover::after {
+    animation: wind 3s ease forwards;
+  }
+
+  @keyframes wind {
+    0% {
+      opacity: 0;
+      transform: translate(-50px, -50%) skewX(-10deg);
+    }
+    50% {
+      opacity: 0.7;
+      transform: translate(10px, -50%) skewX(5deg);
+    }
+    100% {
+      opacity: 1;
+      transform: translate(0, -50%) skewX(0deg);
+    }
+  }

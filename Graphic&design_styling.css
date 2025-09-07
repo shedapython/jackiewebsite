@@ -1,0 +1,35 @@
+
+    body {
+      margin: 0;
+      padding: 20px;
+      font-family: "Helvetica Neue", sans-serif;
+      background-color: #bb3535;
+      color: #dad7d7;
+      text-align: center;
+    }
+
+  .image-collum {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* spreads the images left and right */
+      width: 750px;
+      max-height:750px;
+      margin: 0 auto; /* centers the container */
+      gap: 2rem;
+    }
+    .image-container img {
+  height: 500px;
+  width: 500px;
+  object-fit: contain; /* or 'contain' depending on your vibe */
+}
+    .image-container img {
+      max-width: 100%;
+      height: auto;
+      width: 2000px;
+      border-radius: 8px;
+      display: block;
+      margin: 0 auto;
+        .link {
+        animation: ease-out;
+    }
+
