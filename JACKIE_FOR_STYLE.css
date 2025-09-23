@@ -12,6 +12,7 @@
   max-height: 150px; /* adjust as needed */
   height: auto;
   width: auto;
+    align-items: center;
     object-fit: contain;
 
 }
@@ -66,6 +67,8 @@
     overflow: hidden;
     white-space: nowrap;
     padding: 5px 0;
+    overflow-wrap: break-word;
+    text-align: center; /* This will make it look neater */
   }
 
   /* Hide binary when hovered */
@@ -111,3 +114,97 @@
       transform: translate(0, -50%) skewX(0deg);
     }
   }
+
+/* Basic layout setup for desktop, inline buttons */
+.heading-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 15px; /* Space between buttons */
+    padding: 16px;
+}
+
+/* Style each button container */
+.heading-row a {
+    display: inline-flex;           /* Make sure it respects the inline nature but acts like flex */
+    flex-direction: column;         /* Stack image and text vertically if needed */
+    align-items: center;            /* Center content inside */
+    text-decoration: none;            /* Remove underline from text */
+    padding: 5px;
+    min-width: 200px;                /* Minimum width to ensure readability */
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.heading-row a:hover {
+    background-color: #ec7c7c; /* Hover effect */
+}
+
+/* Make images inside buttons responsive and fit nicely */
+.heading-row a img {
+    width: auto; /* Make sure images do not overflow the container */
+    height: 130px;    /* Keep aspect ratio */
+    margin-bottom: 8px; /* Space between image and text */
+  object-fit: contain;
+}
+
+/* For small screens: stack vertically and make buttons wider */
+@media (max-width: 768px) {
+    .heading-row {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .heading-row a {
+        width: 80%; /* Make buttons take up most of the screen width on mobile */
+        max-width: 300px; /* Limit maximum width for readability */
+        min-width: auto;
+    }
+}
+/* Increase top container padding for more height at top */
+.heading-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  gap: 10px;
+  padding: 20px; /* Increased from 10px to give more space at top */
+  max-width: 1000px; /* existing */
+  margin: 0 auto; /* center the row */
+}
+
+/* Style each button, making them bigger */
+.heading-row a {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px; /* increased from 5px */
+  min-width: 220px; /* bigger width */
+  max-width: 260px; /* bigger max width */
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Hover color unchanged */
+.heading-row a:hover {
+  background-color: #ec7c7c;
+}
+
+/* Make images bigger inside buttons */
+.heading-row a img {
+  max-height: 200px; /* increase from 150px */
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 8px;
+}
+
+/* Reduce space at the bottom of body to make layout tighter */
+body {
+  margin: 0;
+  padding: 10px; /* Reduce from 20px to less space below */
+  font-family: "Helvetica Neue", sans-serif;
+  background-color: #bb3535;
+  color: #dad7d7;
+  text-align: center;
+}
