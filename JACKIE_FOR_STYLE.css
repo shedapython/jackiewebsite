@@ -150,6 +150,10 @@
 
 /* For small screens: stack vertically and make buttons wider */
 @media (max-width: 768px) {
+
+  .binary-text {
+    display: none;
+  }
     .heading-row {
         flex-direction: column;
         align-items: center;
