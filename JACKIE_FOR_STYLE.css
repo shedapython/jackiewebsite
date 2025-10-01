@@ -58,6 +58,7 @@
     }
 
   .binary-text {
+      max-width: 100%;
     font-family: monospace;
     font-size: 14px;
     color: #555;
